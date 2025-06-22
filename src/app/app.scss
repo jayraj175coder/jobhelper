@@ -9,33 +9,59 @@ body {
 }
 
 .navbar {
-  background: #fff;
+  background: linear-gradient(90deg, #2563eb 0%, #6ee7b7 100%);
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 1.2rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-radius: 0 0 1.5rem 1.5rem;
 }
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 700;
-  color: #2563eb;
+  color: #fff;
+  letter-spacing: 1px;
 }
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 1.2rem;
   margin: 0;
   padding: 0;
 }
+.nav-links li {
+  border-radius: 2rem;
+  transition: background 0.2s;
+}
 .nav-links a {
-  color: #2563eb;
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.2s;
+  font-size: 1.08rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 2rem;
+  transition: background 0.2s, color 0.2s;
+  display: block;
 }
-.nav-links a:hover {
-  color: #1e40af;
+.nav-links a.active, .nav-links a:focus, .nav-links a:hover {
+  background: #fff;
+  color: #2563eb;
+  box-shadow: 0 2px 8px rgba(79,140,255,0.10);
+}
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0.5rem;
+  }
+  .nav-links {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .logo {
+    margin-bottom: 0.7rem;
+  }
 }
 .main-content {
   padding: 2rem 0 0 0;
