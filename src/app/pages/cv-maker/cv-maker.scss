@@ -1,0 +1,50 @@
+.cv-maker {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(79,140,255,0.08);
+  padding: 2.5rem 2rem 2rem 2rem;
+}
+.cv-maker h1 {
+  text-align: center;
+  color: #2563eb;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.cv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.form-section h2 {
+  font-size: 1.1rem;
+  color: #1e40af;
+  margin-bottom: 0.5rem;
+}
+input, textarea {
+  padding: 0.8rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.7rem;
+  font-size: 1rem;
+  background: #f6f8fa;
+  transition: border 0.2s;
+}
+input:focus, textarea:focus {
+  border: 1.5px solid #2563eb;
+  outline: none;
+}
+.btn-primary {
+  align-self: center;
+  margin-top: 1.5rem;
+}
+@media (max-width: 600px) {
+  .cv-maker {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  }
+} 
