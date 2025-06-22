@@ -1,0 +1,65 @@
+.job-tracker {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(79,140,255,0.08);
+  padding: 2.5rem 2rem 2rem 2rem;
+}
+.job-tracker h1 {
+  color: #2563eb;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.job-form {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+.job-form input, .job-form select {
+  padding: 0.7rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.7rem;
+  font-size: 1rem;
+  background: #f6f8fa;
+  min-width: 150px;
+}
+.job-form button {
+  min-width: 120px;
+}
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.job-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+.job-table th, .job-table td {
+  padding: 0.9rem 0.7rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+.job-table th {
+  color: #2563eb;
+  font-size: 1.05rem;
+}
+.job-table tr:last-child td {
+  border-bottom: none;
+}
+@media (max-width: 800px) {
+  .job-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .job-table th, .job-table td {
+    font-size: 0.95rem;
+    padding: 0.7rem 0.4rem;
+  }
+} 

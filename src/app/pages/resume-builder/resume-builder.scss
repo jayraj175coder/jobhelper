@@ -1,0 +1,50 @@
+.resume-builder {
+  max-width: 700px;
+  margin: 2.5rem auto;
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(79,140,255,0.08);
+  padding: 2.5rem 2rem 2rem 2rem;
+}
+.resume-builder h1 {
+  color: #2563eb;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.resume-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+.resume-form input, .resume-form textarea {
+  padding: 0.8rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.7rem;
+  font-size: 1rem;
+  background: #f6f8fa;
+}
+.resume-form button {
+  align-self: flex-start;
+}
+.resume-preview {
+  background: #f6f8fa;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(79,140,255,0.04);
+}
+.resume-preview h2 {
+  color: #1e40af;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.preview-content p {
+  margin: 0.3rem 0;
+  color: #333;
+}
+@media (max-width: 600px) {
+  .resume-builder {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  }
+} 
