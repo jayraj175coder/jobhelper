@@ -1,28 +1,28 @@
-<section class="hero">
+<section class="landing-hero">
   <div class="hero-content">
-    <h1>Welcome to JobHelper</h1>
-    <p>Your all-in-one portal for job seekers: Track applications, build ATS-friendly resumes, and land your dream job faster.</p>
+    <h1>Welcome to <span class="brand">JobHelper</span></h1>
+    <p class="hero-subtext">Build beautiful, ATS-optimized resumes and manage your job search like a pro. All-in-one, just like resume.io — but yours.</p>
     <div class="cta-buttons">
-      <a routerLink="/cv-maker" class="btn btn-primary">Create ATS-Friendly Resume</a>
-      <a routerLink="/dashboard" class="btn btn-secondary">Go to Dashboard</a>
+      <a [routerLink]="['/resume-builder']" class="btn">Create ATS-Friendly Resume</a>
+      <a [routerLink]="['/dashboard']" class="btn btn-secondary">Go to Dashboard</a>
     </div>
   </div>
 </section>
-<section class="features">
-  <div class="feature">
-    <h2>ATS-Friendly CV Maker</h2>
-    <p>Build a professional, ATS-optimized resume in minutes and download as PDF.</p>
+<section class="features-grid">
+  <div class="feature-card">
+    <h2>CV Maker</h2>
+    <p>Build a professional, ATS-optimized resume in minutes. Export as PDF, ready for any job board.</p>
   </div>
-  <div class="feature">
-    <h2>Job Application Tracker</h2>
-    <p>Track your job applications, interviews, and offers in one place.</p>
+  <div class="feature-card">
+    <h2>Job Tracker</h2>
+    <p>Track every job application, interview, and offer. Stay organized and never miss a follow-up.</p>
   </div>
-  <div class="feature">
-    <h2>Interview Prep Tools</h2>
-    <p>Store Q&A, schedule interviews, and get reminders for follow-ups.</p>
+  <div class="feature-card">
+    <h2>Interview Prep</h2>
+    <p>Store Q&A, set reminders, and get AI-powered suggestions for your next interview.</p>
   </div>
-  <div class="feature">
-    <h2>Quick Resume Builder</h2>
-    <p>Create a basic resume in under 2 minutes for fast applications.</p>
+  <div class="feature-card">
+    <h2>Quick Resume</h2>
+    <p>Need a resume fast? Use our quick builder to get a clean, effective resume in 2 minutes.</p>
   </div>
 </section> 

@@ -1,10 +1,7 @@
 .job-tracker {
   max-width: 900px;
   margin: 2.5rem auto;
-  background: #fff;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 24px rgba(79,140,255,0.08);
-  padding: 2.5rem 2rem 2rem 2rem;
+  padding: 0 1rem 2rem 1rem;
 }
 .job-tracker h1 {
   color: #2563eb;
@@ -12,11 +9,22 @@
   text-align: center;
   margin-bottom: 2rem;
 }
+.card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(79,140,255,0.08);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.card h2 {
+  color: #1e40af;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
 .job-form {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
   justify-content: center;
 }
 .job-form input, .job-form select {
@@ -30,11 +38,26 @@
 .job-form button {
   min-width: 120px;
 }
-.filter-buttons {
+.filter-tabs {
   display: flex;
-  gap: 1rem;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.tab {
+  background: #f6f8fa;
+  color: #2563eb;
+  border: none;
+  border-radius: 2rem 2rem 0 0;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.tab.active, .tab:hover {
+  background: linear-gradient(90deg, #2563eb 0%, #6ee7b7 100%);
+  color: #fff;
 }
 .job-table {
   width: 100%;

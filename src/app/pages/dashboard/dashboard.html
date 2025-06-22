@@ -1,18 +1,20 @@
 <section class="dashboard">
-  <h1>Welcome to JobHelper!</h1>
-  <div class="summary-cards">
-    <div class="summary-card">
+  <h1>Welcome back, <span class="brand">JobHelper</span> User!</h1>
+  <div class="dashboard-grid">
+    <div class="card summary-card">
       <h2>Job Applications</h2>
       <p class="summary-value">0</p>
     </div>
-    <div class="summary-card">
+    <div class="card summary-card">
       <h2>Resumes Created</h2>
       <p class="summary-value">0</p>
     </div>
   </div>
-  <button class="btn btn-primary">Add New Job Application</button>
-  <nav class="dashboard-nav">
-    <a routerLink="/jobs" class="btn btn-secondary">Job List</a>
-    <a routerLink="/cv-maker" class="btn btn-secondary">Resume Builder</a>
-  </nav>
+  <div class="card dashboard-actions">
+    <button class="btn">Add New Job Application</button>
+    <div class="dashboard-nav">
+      <a [routerLink]="['/jobs']" class="btn btn-secondary">Job List</a>
+      <a [routerLink]="['/resume-builder']" class="btn btn-secondary">Resume Builder</a>
+    </div>
+  </div>
 </section>

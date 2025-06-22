@@ -1,44 +1,50 @@
 <section class="job-tracker">
   <h1>Job Application Tracker</h1>
-  <form class="job-form">
-    <input type="text" placeholder="Company Name" required />
-    <input type="text" placeholder="Position" required />
-    <input type="date" placeholder="Date Applied" required />
-    <select>
-      <option value="applied">Applied</option>
-      <option value="interviewed">Interviewed</option>
-      <option value="offer">Offer</option>
-    </select>
-    <button type="submit" class="btn btn-primary">Add Job</button>
-  </form>
-  <div class="filter-buttons">
-    <button class="btn btn-secondary">All</button>
-    <button class="btn btn-secondary">Applied</button>
-    <button class="btn btn-secondary">Interviewed</button>
-    <button class="btn btn-secondary">Offer</button>
+  <div class="card">
+    <h2>Add New Job Application</h2>
+    <form class="job-form">
+      <input type="text" placeholder="Company Name" required />
+      <input type="text" placeholder="Position" required />
+      <input type="date" placeholder="Date Applied" required />
+      <select>
+        <option value="applied">Applied</option>
+        <option value="interviewed">Interviewed</option>
+        <option value="offer">Offer</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Add Job</button>
+    </form>
   </div>
-  <table class="job-table">
-    <thead>
-      <tr>
-        <th>Company</th>
-        <th>Position</th>
-        <th>Date Applied</th>
-        <th>Status</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Job rows go here -->
-      <tr>
-        <td>Example Co</td>
-        <td>Frontend Dev</td>
-        <td>2024-06-01</td>
-        <td>Applied</td>
-        <td>
-          <button class="btn btn-secondary">Edit</button>
-          <button class="btn btn-secondary">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="filter-tabs">
+    <button class="tab active">All</button>
+    <button class="tab">Applied</button>
+    <button class="tab">Interviewed</button>
+    <button class="tab">Offer</button>
+  </div>
+  <div class="card">
+    <h2>Job Applications</h2>
+    <table class="job-table">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Position</th>
+          <th>Date Applied</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Job rows go here -->
+        <tr>
+          <td>Example Co</td>
+          <td>Frontend Dev</td>
+          <td>2024-06-01</td>
+          <td>Applied</td>
+          <td>
+            <button class="btn btn-secondary">Edit</button>
+            <button class="btn btn-secondary">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </section> 
