@@ -1,0 +1,20 @@
+export class ProductComponent {
+
+    product = {
+        name:"jat",
+        discount:4,
+        price:23,
+
+    }
+    getDiscount(): number{
+        return (
+            this.product.price - (this.product.price * this.product.discount)/100;
+        )
+    }
+
+
+}
+
+<p>
+    {{product.price}}
+</p>

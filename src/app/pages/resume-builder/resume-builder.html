@@ -1,7 +1,7 @@
 <section class="resume-builder">
   <h1>Resume Builder</h1>
   <div class="resume-builder-main">
-    <div class="card preview-card">
+    <div class="card preview-card fixed-resume-size">
       <h2>Preview</h2>
       <div class="resume-preview">
         <div class="resume-left">
@@ -42,8 +42,9 @@
         </div>
       </div>
     </div>
-    <div class="card form-card">
+    <div class="card form-card fixed-resume-size">
       <h2>Build Your Resume</h2>
+      <button type="button" class="btn btn-secondary" (click)="resetToDefault()">Reset to Example</button>
       <form class="resume-form" [formGroup]="resumeForm" (ngSubmit)="onSubmit()">
         <input type="text" formControlName="name" placeholder="Full Name" required />
         <input type="email" formControlName="email" placeholder="Email" required />

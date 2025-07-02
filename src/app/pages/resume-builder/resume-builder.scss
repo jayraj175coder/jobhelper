@@ -185,4 +185,19 @@
     min-width: 0;
     margin-left: 0;
   }
+}
+.fixed-resume-size {
+  width: 800px;
+  min-height: 1120px;
+  max-height: 1120px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+@media (max-width: 900px) {
+  .fixed-resume-size {
+    width: 100%;
+    min-height: unset;
+    max-height: unset;
+  }
 } 
