@@ -2,24 +2,46 @@
   <h1>Resume Builder</h1>
   <div class="card">
     <h2>Build Your Resume</h2>
-    <form class="resume-form">
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email" required />
-      <textarea placeholder="Experience" rows="3"></textarea>
-      <textarea placeholder="Education" rows="2"></textarea>
-      <input type="text" placeholder="Skills (comma separated)" />
+    <form class="resume-form" [formGroup]="resumeForm" (ngSubmit)="onSubmit()">
+      <input type="text" formControlName="name" placeholder="Full Name" required />
+      <input type="email" formControlName="email" placeholder="Email" required />
+
+      <div formArrayName="experience">
+        <label>Experience</label>
+        <div *ngFor="let exp of experience.controls; let i = index">
+          <textarea [formControlName]="i" placeholder="Experience" rows="2"></textarea>
+          <button type="button" (click)="removeExperience(i)" *ngIf="experience.length > 1">Remove</button>
+        </div>
+        <button type="button" (click)="addExperience()">Add Experience</button>
+      </div>
+
+      <div formArrayName="education">
+        <label>Education</label>
+        <div *ngFor="let edu of education.controls; let i = index">
+          <textarea [formControlName]="i" placeholder="Education" rows="2"></textarea>
+          <button type="button" (click)="removeEducation(i)" *ngIf="education.length > 1">Remove</button>
+        </div>
+        <button type="button" (click)="addEducation()">Add Education</button>
+      </div>
+
+      <input type="text" formControlName="skills" placeholder="Skills (comma separated)" />
       <button type="submit" class="btn btn-primary">Download as PDF</button>
     </form>
   </div>
   <div class="card preview-card">
     <h2>Preview</h2>
     <div class="preview-content">
-      <!-- Live preview of resume goes here -->
-      <p><strong>Name:</strong> John Doe</p>
-      <p><strong>Email:</strong> john&#64;example.com</p>
-      <p><strong>Experience:</strong> ...</p>
-      <p><strong>Education:</strong> ...</p>
-      <p><strong>Skills:</strong> Angular, TypeScript, SASS</p>
+      <p><strong>Name:</strong> {{ resumeForm.value.name }}</p>
+      <p><strong>Email:</strong> {{ resumeForm.value.email }}</p>
+      <p><strong>Experience:</strong></p>
+      <ul>
+        <li *ngFor="let exp of resumeForm.value.experience">{{ exp }}</li>
+      </ul>
+      <p><strong>Education:</strong></p>
+      <ul>
+        <li *ngFor="let edu of resumeForm.value.education">{{ edu }}</li>
+      </ul>
+      <p><strong>Skills:</strong> {{ resumeForm.value.skills }}</p>
     </div>
   </div>
 </section> 
