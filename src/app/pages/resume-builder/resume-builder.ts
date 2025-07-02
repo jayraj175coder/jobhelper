@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-resume-builder',
-  imports: [ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './resume-builder.html',
   styleUrl: './resume-builder.scss'
 })
@@ -15,13 +16,34 @@ export class ResumeBuilder {
     this.resumeForm = this.fb.group({
       name: [''],
       email: [''],
+      summary: [''],
       experience: this.fb.array([
-        this.fb.control('')
+        this.createExperienceGroup()
       ]),
       education: this.fb.array([
-        this.fb.control('')
+        this.createEducationGroup()
       ]),
       skills: ['']
+    });
+  }
+
+  createExperienceGroup() {
+    return this.fb.group({
+      jobTitle: [''],
+      company: [''],
+      startDate: [''],
+      endDate: [''],
+      description: ['']
+    });
+  }
+
+  createEducationGroup() {
+    return this.fb.group({
+      degree: [''],
+      institution: [''],
+      startDate: [''],
+      endDate: [''],
+      description: ['']
     });
   }
 
@@ -34,7 +56,7 @@ export class ResumeBuilder {
   }
 
   addExperience() {
-    this.experience.push(this.fb.control(''));
+    this.experience.push(this.createExperienceGroup());
   }
 
   removeExperience(index: number) {
@@ -42,7 +64,7 @@ export class ResumeBuilder {
   }
 
   addEducation() {
-    this.education.push(this.fb.control(''));
+    this.education.push(this.createEducationGroup());
   }
 
   removeEducation(index: number) {

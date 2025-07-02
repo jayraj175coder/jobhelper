@@ -41,12 +41,62 @@
   background: linear-gradient(90deg, #f6f8fa 60%, #e0e7ff 100%);
   border: 1.5px solid #dbeafe;
 }
+.preview-content {
+  padding: 1rem 0.5rem;
+}
+.preview-content h3 {
+  margin-bottom: 0.2rem;
+  color: #1e293b;
+  font-size: 1.3rem;
+}
+.preview-content h4 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: #2563eb;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #dbeafe;
+  padding-bottom: 0.2rem;
+}
 .preview-content p {
   margin: 0.3rem 0;
   color: #333;
 }
+.entry-card {
+  background: #f1f5f9;
+  border: 1px solid #dbeafe;
+  border-radius: 0.7rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.entry-card button {
+  align-self: flex-end;
+  margin-top: 0.2rem;
+}
+.resume-form label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #1e40af;
+}
+.resume-form .entry-card input,
+.resume-form .entry-card textarea {
+  background: #fff;
+}
+.section-header {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
 @media (max-width: 600px) {
   .resume-builder {
     padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  }
+  .entry-card {
+    padding: 0.7rem;
   }
 } 
