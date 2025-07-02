@@ -1,60 +1,83 @@
 <section class="resume-builder">
   <h1>Resume Builder</h1>
-  <div class="card">
-    <h2>Build Your Resume</h2>
-    <form class="resume-form" [formGroup]="resumeForm" (ngSubmit)="onSubmit()">
-      <input type="text" formControlName="name" placeholder="Full Name" required />
-      <input type="email" formControlName="email" placeholder="Email" required />
-      <textarea formControlName="summary" placeholder="Professional Summary" rows="3"></textarea>
-
-      <div class="section-header">Experience</div>
-      <div formArrayName="experience">
-        <div *ngFor="let exp of experience.controls; let i = index" [formGroupName]="i" class="entry-card">
-          <input type="text" formControlName="jobTitle" placeholder="Job Title (e.g. Software Engineer)" />
-          <input type="text" formControlName="company" placeholder="Company (e.g. Google)" />
-          <input type="text" formControlName="startDate" placeholder="Start Date (e.g. Jan 2020)" />
-          <input type="text" formControlName="endDate" placeholder="End Date (e.g. Dec 2022 or Present)" />
-          <textarea formControlName="description" placeholder="Describe your responsibilities and achievements" rows="2"></textarea>
-          <button type="button" (click)="removeExperience(i)" *ngIf="experience.length > 1">Remove</button>
+  <div class="resume-builder-main">
+    <div class="card preview-card">
+      <h2>Preview</h2>
+      <div class="resume-preview">
+        <div class="resume-left">
+          <h3>{{ resumeForm.value.name }}</h3>
+          <p class="resume-title">{{ resumeForm.value.summary }}</p>
+          <div class="resume-section">
+            <h4>Experience</h4>
+            <div *ngFor="let exp of resumeForm.value.experience">
+              <p><strong>{{ exp.jobTitle }}</strong> at {{ exp.company }}</p>
+              <p class="date">{{ exp.startDate }} - {{ exp.endDate }}</p>
+              <p>{{ exp.description }}</p>
+            </div>
+          </div>
+          <div class="resume-section">
+            <h4>Education</h4>
+            <div *ngFor="let edu of resumeForm.value.education">
+              <p><strong>{{ edu.degree }}</strong> at {{ edu.institution }}</p>
+              <p class="date">{{ edu.startDate }} - {{ edu.endDate }}</p>
+              <p>{{ edu.description }}</p>
+            </div>
+          </div>
         </div>
-        <button type="button" (click)="addExperience()">+ Add Experience</button>
-      </div>
-
-      <div class="section-header">Education</div>
-      <div formArrayName="education">
-        <div *ngFor="let edu of education.controls; let i = index" [formGroupName]="i" class="entry-card">
-          <input type="text" formControlName="degree" placeholder="Degree (e.g. BSc Computer Science)" />
-          <input type="text" formControlName="institution" placeholder="Institution (e.g. MIT)" />
-          <input type="text" formControlName="startDate" placeholder="Start Date (e.g. Sep 2018)" />
-          <input type="text" formControlName="endDate" placeholder="End Date (e.g. Jun 2022 or Present)" />
-          <textarea formControlName="description" placeholder="Describe your studies, honors, etc." rows="2"></textarea>
-          <button type="button" (click)="removeEducation(i)" *ngIf="education.length > 1">Remove</button>
+        <div class="resume-right">
+          <div class="resume-section">
+            <h4>Contact</h4>
+            <p>{{ resumeForm.value.email }}</p>
+          </div>
+          <div class="resume-section">
+            <h4>Skills</h4>
+            <div class="skills-list">
+              <span *ngFor="let skill of resumeForm.value.skills.split(',')" class="skill-chip">{{ skill.trim() }}</span>
+            </div>
+          </div>
+          <div class="resume-section">
+            <h4>Awards</h4>
+            <p><!-- Add awards here --></p>
+          </div>
         </div>
-        <button type="button" (click)="addEducation()">+ Add Education</button>
       </div>
+    </div>
+    <div class="card form-card">
+      <h2>Build Your Resume</h2>
+      <form class="resume-form" [formGroup]="resumeForm" (ngSubmit)="onSubmit()">
+        <input type="text" formControlName="name" placeholder="Full Name" required />
+        <input type="email" formControlName="email" placeholder="Email" required />
+        <textarea formControlName="summary" placeholder="Professional Summary" rows="3"></textarea>
 
-      <input type="text" formControlName="skills" placeholder="Skills (comma separated)" />
-      <button type="submit" class="btn btn-primary">Download as PDF</button>
-    </form>
-  </div>
-  <div class="card preview-card">
-    <h2>Preview</h2>
-    <div class="preview-content">
-      <h3>{{ resumeForm.value.name }}</h3>
-      <p><strong>Email:</strong> {{ resumeForm.value.email }}</p>
-      <p><strong>Summary:</strong> {{ resumeForm.value.summary }}</p>
-      <h4>Experience</h4>
-      <div *ngFor="let exp of resumeForm.value.experience">
-        <p><strong>{{ exp.jobTitle }}</strong> at {{ exp.company }} ({{ exp.startDate }} - {{ exp.endDate }})</p>
-        <p>{{ exp.description }}</p>
-      </div>
-      <h4>Education</h4>
-      <div *ngFor="let edu of resumeForm.value.education">
-        <p><strong>{{ edu.degree }}</strong> at {{ edu.institution }} ({{ edu.startDate }} - {{ edu.endDate }})</p>
-        <p>{{ edu.description }}</p>
-      </div>
-      <h4>Skills</h4>
-      <p>{{ resumeForm.value.skills }}</p>
+        <div class="section-header">Experience</div>
+        <div formArrayName="experience">
+          <div *ngFor="let exp of experience.controls; let i = index" [formGroupName]="i" class="entry-card">
+            <input type="text" formControlName="jobTitle" placeholder="Job Title (e.g. Software Engineer)" />
+            <input type="text" formControlName="company" placeholder="Company (e.g. Google)" />
+            <input type="text" formControlName="startDate" placeholder="Start Date (e.g. Jan 2020)" />
+            <input type="text" formControlName="endDate" placeholder="End Date (e.g. Dec 2022 or Present)" />
+            <textarea formControlName="description" placeholder="Describe your responsibilities and achievements" rows="2"></textarea>
+            <button type="button" (click)="removeExperience(i)" *ngIf="experience.length > 1">Remove</button>
+          </div>
+          <button type="button" (click)="addExperience()">+ Add Experience</button>
+        </div>
+
+        <div class="section-header">Education</div>
+        <div formArrayName="education">
+          <div *ngFor="let edu of education.controls; let i = index" [formGroupName]="i" class="entry-card">
+            <input type="text" formControlName="degree" placeholder="Degree (e.g. BSc Computer Science)" />
+            <input type="text" formControlName="institution" placeholder="Institution (e.g. MIT)" />
+            <input type="text" formControlName="startDate" placeholder="Start Date (e.g. Sep 2018)" />
+            <input type="text" formControlName="endDate" placeholder="End Date (e.g. Jun 2022 or Present)" />
+            <textarea formControlName="description" placeholder="Describe your studies, honors, etc." rows="2"></textarea>
+            <button type="button" (click)="removeEducation(i)" *ngIf="education.length > 1">Remove</button>
+          </div>
+          <button type="button" (click)="addEducation()">+ Add Education</button>
+        </div>
+
+        <input type="text" formControlName="skills" placeholder="Skills (comma separated)" />
+        <button type="submit" class="btn btn-primary">Download as PDF</button>
+      </form>
     </div>
   </div>
 </section> 
